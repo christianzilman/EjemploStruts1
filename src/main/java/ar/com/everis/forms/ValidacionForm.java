@@ -9,6 +9,10 @@ import org.apache.struts.action.*;
  *
  */
 public class ValidacionForm extends ActionForm {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	// datos miembro
 	private String usuario;
 	private String password;

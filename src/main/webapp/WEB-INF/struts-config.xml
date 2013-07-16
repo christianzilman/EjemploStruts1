@@ -29,15 +29,19 @@
 	<!-- ================================================ Form Bean Definitions -->
 
 	<form-beans>
-		<form-bean name="ValidacionForm" type="ar.com.everis.forms.ValidacionForm" />
+		
+		<!-- <form-bean name="ValidacionForm" type="ar.com.everis.forms.ValidacionForm" />-->
 
 		<!-- sample form bean descriptor for an ActionForm <form-bean name="inputForm" 
 			type="app.InputForm"/> end sample -->
 
-		<!-- sample form bean descriptor for a DynaActionForm <form-bean name="logonForm" 
-			type="org.apache.struts.action.DynaActionForm"> <form-property name="username" 
-			type="java.lang.String"/> <form-property name="password" type="java.lang.String"/> 
-			</form-bean> end sample -->
+		<!-- sample form bean descriptor for a DynaActionForm -->
+		<form-bean name="ValidacionForm" 
+			type="ar.com.everis.forms.ValidacionForm"> 
+			<form-property name="usuario"	type="java.lang.String"/> 
+			<form-property name="password" type="java.lang.String"/> 
+			</form-bean>
+			<!-- end sample -->
 	</form-beans>
 
 

@@ -1,13 +1,17 @@
 package ar.com.everis.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import ar.com.everis.forms.ValidacionForm;
+import ar.com.everis.service.PruebaService;
 
 
-//@Component
+@Component
 public class GestionClientes {
 	
-	//@Autowired
-	//private PruebaService pruebaService;
+	@Autowired
+	private PruebaService pruebaService;
 	public GestionClientes() {
 		// TODO Auto-generated constructor stub
 	}
