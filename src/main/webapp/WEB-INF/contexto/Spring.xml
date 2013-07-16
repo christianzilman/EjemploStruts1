@@ -30,14 +30,14 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
             </list>
         </property>
     </bean>
-    <!-- 
+    
     <bean id="pruebaService" class="ar.com.everis.service.impl.PruebaServiceImpl" >
    		<property name="pruebaDao" ref="pruebaDao" />
    	</bean>
  
    	<bean id="pruebaDao" class="ar.com.everis.repository.impl.PruebaDaoImpl">
    		<property name="sessionFactory" ref="sessionFactory"></property>
-   	</bean>-->
+   	</bean>
     
     
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"
