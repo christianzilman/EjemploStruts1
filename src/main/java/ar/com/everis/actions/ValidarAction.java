@@ -8,24 +8,28 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
-import ar.com.everis.controller.GestionClientes;
+import org.springframework.web.struts.ActionSupport;
 import ar.com.everis.forms.ValidacionForm;
+import ar.com.everis.service.PruebaService;
 
-public class ValidarAction extends Action {
+@SuppressWarnings("deprecation")
+public class ValidarAction extends ActionSupport {	
 	
 	
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
-		// obtiene los datos del driver y de la cadena de 78 STRUTS © RA-MA
-		// conexión de los parámetros de contexto
-		GestionClientes gc = new GestionClientes();
+		// obtiene los datos del driver y de la cadena de 78 STRUTS ï¿½ RA-MA
+		// conexiï¿½n de los parï¿½metros de contexto
+		//GestionClientes gc = new GestionClientes();
 		ValidacionForm vf = (ValidacionForm) form;		
-		if (gc.validar(vf)) {
+		PruebaService pruebaService =
+				(PruebaService) getWebApplicationContext().getBean("pruebaService");
+		if (pruebaService.getByNombre(vf.getUsuario().trim())) {
 		//if(pruebaService.getByNombre(vf.getUsuario())){
 			return mapping.findForward("bienvenida");
 		} else {
-			//vf.setMensaje("<h2>Combinación de usuario y password incorrecta!</h2>");
+			//vf.setMensaje("<h2>Combinaciï¿½n de usuario y password incorrecta!</h2>");
 			return mapping.findForward("error");
 		}
 	}

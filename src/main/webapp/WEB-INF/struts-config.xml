@@ -114,6 +114,7 @@
 		/> <set-property property="moduleAware" value="true" /> </plug-in> -->
 
 
+	 <controller processorClass="org.springframework.web.struts.DelegatingRequestProcessor"/>
 	<!-- =================================================== Validator plugin -->
 
 	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">

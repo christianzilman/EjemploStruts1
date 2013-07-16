@@ -54,4 +54,12 @@ public class PruebaServiceImpl implements PruebaService {
 		}
 	}
 
+	public PruebaDao getPruebaDao() {
+		return pruebaDao;
+	}
+
+	public void setPruebaDao(PruebaDao pruebaDao) {
+		this.pruebaDao = pruebaDao;
+	}
+
 }
