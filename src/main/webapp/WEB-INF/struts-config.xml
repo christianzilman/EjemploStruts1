@@ -29,19 +29,22 @@
 	<!-- ================================================ Form Bean Definitions -->
 
 	<form-beans>
-		
-		<!-- <form-bean name="ValidacionForm" type="ar.com.everis.forms.ValidacionForm" />-->
+
+		<!-- <form-bean name="ValidacionForm" type="ar.com.everis.forms.ValidacionForm" 
+			/> -->
 
 		<!-- sample form bean descriptor for an ActionForm <form-bean name="inputForm" 
 			type="app.InputForm"/> end sample -->
 
 		<!-- sample form bean descriptor for a DynaActionForm -->
-		<form-bean name="ValidacionForm" 
-			type="ar.com.everis.forms.ValidacionForm"> 
-			<form-property name="usuario"	type="java.lang.String"/> 
-			<form-property name="password" type="java.lang.String"/> 
-			</form-bean>
-			<!-- end sample -->
+		<form-bean name="ValidacionForm" type="ar.com.everis.forms.ValidacionForm">
+			<form-property name="usuario" type="java.lang.String" />
+			<form-property name="password" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="dynaCustomerListForm" type="org.apache.struts.action.DynaActionForm">
+			<form-property name="pruebaList" type="java.util.List" />
+		</form-bean>
+		<!-- end sample -->
 	</form-beans>
 
 
@@ -58,7 +61,7 @@
 	<global-forwards>
 		<!-- Default forward to "Welcome" action -->
 		<!-- Demonstrates using index.jsp to forward -->
-		<forward name="welcome" path="/Welcome.do" />		
+		<forward name="welcome" path="/Welcome.do" />
 	</global-forwards>
 
 
@@ -75,6 +78,12 @@
 			type="ar.com.everis.actions.ValidarAction">
 			<forward name="bienvenida" path="/pages/bienvenida.jsp" />
 			<forward name="error" path="/pages/error.jsp" />
+		</action>
+
+
+		<action path="/ListarPrueba" type="ar.com.everis.actions.ListarPruebaAction"
+			name="dynaCustomerListForm">
+			<forward name="success" path="/pages/pruebas/grilla.jsp" />
 		</action>
 		<!-- sample input and input submit actions <action path="/Input" type="org.apache.struts.actions.ForwardAction" 
 			parameter="/pages/Input.jsp"/> <action path="/InputSubmit" type="app.InputAction" 
@@ -114,7 +123,7 @@
 		/> <set-property property="moduleAware" value="true" /> </plug-in> -->
 
 
-	 <controller processorClass="org.springframework.web.struts.DelegatingRequestProcessor"/>
+	<!-- <controller processorClass="org.springframework.web.struts.DelegatingRequestProcessor"/> -->
 	<!-- =================================================== Validator plugin -->
 
 	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
@@ -122,12 +131,11 @@
 			value="/org/apache/struts/validator/validator-rules.xml,
                /WEB-INF/validation.xml" />
 	</plug-in>
-	
+
 	<!-- Spring Struts plugin -->
- 	<plug-in className="org.springframework.web.struts.ContextLoaderPlugIn">
-		<set-property property="contextConfigLocation"
-		value="/WEB-INF/contexto/Spring.xml" />
-  	</plug-in>
+	<plug-in className="org.springframework.web.struts.ContextLoaderPlugIn">
+		<set-property property="contextConfigLocation" value="/WEB-INF/contexto/Spring.xml" />
+	</plug-in>
 
 </struts-config>
 
